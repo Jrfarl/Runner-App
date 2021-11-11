@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/home_icon"
+        android:title="@string/app_name" />
+
+    <item
+        android:id="@+id/navigation_options"
+        android:icon="@drawable/options_icon"
+        android:title="@string/options_placeholder" />
+
+    <item
+        android:id="@+id/navigation_scores"
+        android:icon="@drawable/scores_icon"
+        android:title="@string/scores_placeholder" />
+
+    <item
+        android:id="@+id/navigation_help"
+        android:icon="@drawable/help_icon"
+        android:title="@string/help_placeholder" />
+</menu>

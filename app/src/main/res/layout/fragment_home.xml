@@ -9,11 +9,10 @@
     <TextView
         android:id="@+id/game_title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:text="@string/app_name"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@id/start_button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,10 +21,10 @@
         android:id="@+id/start_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="@string/start_button_text"
+        android:layout_marginBottom="90dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/game_title" />
+        app:layout_constraintBottom_toBottomOf="@id/game_title" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

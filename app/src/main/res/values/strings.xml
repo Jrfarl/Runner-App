@@ -6,4 +6,7 @@
     <string name="help_header">Tips and Tricks</string>
     <string name="default_score_name">SQRL</string>
     <string name="background_description">Background</string>
+    <string name="help_body">Tap to Jump! Try not to get hit by the rolling logs! If you\'re struggling, Git Gud Scrub!</string>
+    <string name="help_squirrel_desc">Squirrel</string>
+    <string name="help_log_desc">Log</string>
 </resources>

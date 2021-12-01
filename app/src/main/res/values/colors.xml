@@ -3,4 +3,5 @@
     <color name="bar_blue">#0b11ba</color>
     <color name="accent_blue">#039cd2</color>
     <color name="button_blue">#1421d3</color>
+    <color name="white">#FFFFFF</color>
 </resources>

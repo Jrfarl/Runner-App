@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                     R.id.navigation_home, R.id.navigation_options, R.id.navigation_scores,
                     R.id.navigation_help).build();
 
-            NavigationUI.setupActionBarWithNavController(this, navController, appBarConfig);
+            //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfig);
             NavigationUI.setupWithNavController(navView, navController);
         }
     }

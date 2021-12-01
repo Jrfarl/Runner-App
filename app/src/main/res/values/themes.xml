@@ -1,8 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.RunnerApp" parent="Theme.AppCompat.DayNight.DarkActionBar">
+    <style name="Theme.RunnerApp" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:buttonStyle">@style/buttonStyle</item>
         <item name="android:textColor">@color/accent_blue</item>
         <item name="android:textColorHighlightInverse">@color/bar_blue</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
 
     <style name="buttonStyle" parent="Widget.AppCompat.Button">

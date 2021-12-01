@@ -5,6 +5,8 @@ import android.content.res.Resources;
 
 public class ScoresList {
 
+    //Comment added to test branching
+
     private final Scores[] scoreArray;
     private static ScoresList instance;
 

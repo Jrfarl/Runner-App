@@ -6,13 +6,26 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:background="@color/accent_blue"
-    android:layout_margin="20dp">
+    android:layout_margin="20dp"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/scores_header"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="40sp" />
+        android:textSize="50sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/scores_list"
+        android:name="com.zybooks.runnerapp.ScoresFragment"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:context="com.zybooks.runnerapp.MainActivity"
+        tools:listitem="@layout/scores_list_item" />
 
 </LinearLayout>

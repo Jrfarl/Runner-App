@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="@string/help_placeholder"
+        android:text="@string/help_header"
         android:textSize="40sp" />
 
 </LinearLayout>

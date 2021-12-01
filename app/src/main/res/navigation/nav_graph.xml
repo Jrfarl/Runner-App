@@ -15,19 +15,19 @@
     <fragment
         android:id="@+id/navigation_options"
         android:name="com.zybooks.runnerapp.OptionsFragment"
-        android:label="@string/options_placeholder"
+        android:label="@string/options_header"
         tools:layout="@layout/fragment_options" />
 
     <fragment
         android:id="@+id/navigation_scores"
         android:name="com.zybooks.runnerapp.ScoresFragment"
-        android:label="@string/scores_placeholder"
+        android:label="@string/scores_header"
         tools:layout="@layout/fragment_scores" />
 
     <fragment
         android:id="@+id/navigation_help"
         android:name="com.zybooks.runnerapp.HelpFragment"
-        android:label="@string/help_placeholder"
+        android:label="@string/help_header"
         tools:layout="@layout/fragment_help" />
 
 </navigation>

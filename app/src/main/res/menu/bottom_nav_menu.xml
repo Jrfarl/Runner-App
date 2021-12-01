@@ -9,15 +9,15 @@
     <item
         android:id="@+id/navigation_options"
         android:icon="@drawable/options_icon"
-        android:title="@string/options_placeholder" />
+        android:title="@string/options_header" />
 
     <item
         android:id="@+id/navigation_scores"
         android:icon="@drawable/scores_icon"
-        android:title="@string/scores_placeholder" />
+        android:title="@string/scores_header" />
 
     <item
         android:id="@+id/navigation_help"
         android:icon="@drawable/help_icon"
-        android:title="@string/help_placeholder" />
+        android:title="@string/help_header" />
 </menu>

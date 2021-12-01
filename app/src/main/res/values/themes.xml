@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.RunnerApp" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.RunnerApp" parent="Theme.AppCompat.NoActionBar">
         <item name="android:buttonStyle">@style/buttonStyle</item>
         <item name="android:textColor">@color/accent_blue</item>
         <item name="android:textColorHighlightInverse">@color/bar_blue</item>

@@ -11,7 +11,7 @@
     android:rowCount="3">
 
         <TextView android:text="@string/options_header"
-            android:textSize="30sp"
+            android:textSize="50sp"
             android:layout_columnSpan="3"
             android:layout_gravity="center"
             android:textColor="@color/white"

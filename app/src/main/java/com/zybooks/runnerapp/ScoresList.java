@@ -1,8 +1,8 @@
 package com.zybooks.runnerapp;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
-
 public class ScoresList {
 
     //Comment added to test branching
@@ -20,8 +20,14 @@ public class ScoresList {
     private ScoresList(Context context){
         scoreArray = new Scores[10];
         Resources res = context.getResources();
+
+        SharedPreferences sharedPref = context.getSharedPreferences(
+                "gameoptions", Context.MODE_PRIVATE);
+        String currentName = sharedPref.getString(
+                "name", res.getString(R.string.default_score_name));
+
         for(int i = 0; i < scoreArray.length; i ++){
-            scoreArray[i] = new Scores(0, res.getString(R.string.default_score_name));
+            scoreArray[i] = new Scores(0, currentName);
         }
     }
 

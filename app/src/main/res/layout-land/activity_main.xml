@@ -17,7 +17,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         scrolling_image_view:contiguous="false"
-        scrolling_image_view:source="@mipmap/background_summer_small"
+        scrolling_image_view:source="@drawable/background_summer_small"
         scrolling_image_view:speed="60dp" />
 
     <androidx.fragment.app.FragmentContainerView

@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RunnerApp">
         <activity
-            android:name=".MainActivity"
+            android:name="com.zybooks.runnerapp.GameActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name="com.zybooks.runnerapp.MainActivity"
             android:exported="true"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.RunnerApp">
@@ -20,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -2,6 +2,7 @@ package com.zybooks.runnerapp;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.text.Editable;
@@ -59,11 +60,12 @@ public class OptionsFragment extends Fragment {
     public void generateScore(View view){
         Scores score;
         Random rand = new Random();
+        Resources res = view.getResources();
         int value = rand.nextInt(900) + 100;
         SharedPreferences sharedPref = requireContext().getSharedPreferences(
                 "gameoptions", Context.MODE_PRIVATE);
 
-        score = new Scores(value, sharedPref.getString("name", String.valueOf(R.string.default_score_name)));
+        score = new Scores(value, sharedPref.getString("name", res.getString(R.string.default_score_name)));
         ScoresList.getInstance(requireContext()).checkScore(score);
     }
 

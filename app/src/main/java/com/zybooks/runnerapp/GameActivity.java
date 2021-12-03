@@ -5,6 +5,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -74,11 +75,13 @@ public class GameActivity extends AppCompatActivity {
         finalScoreLong = endTime.getTime()-startTime.getTime();
         finalScore = (int)finalScoreLong;
 
+        Resources res = view.getResources();
+
         SharedPreferences sharedPref = this.getSharedPreferences(
                 "gameoptions", Context.MODE_PRIVATE);
 
         Scores score = new Scores(finalScore, sharedPref.getString("name",
-                String.valueOf(R.string.default_score_name)));
+                res.getString(R.string.default_score_name)));
         ScoresList.getInstance(this).checkScore(score);
 
         finish();

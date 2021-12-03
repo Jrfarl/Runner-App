@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zybooks.runnerapp.OptionsFragment"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:background="@color/accent_blue"
@@ -38,6 +39,14 @@
             android:textSize="40sp"
             android:autofillHints="@string/default_score_name"
             android:inputType="textNoSuggestions" />
+
+        <Button
+            android:id="@+id/generate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/generate_score_text"
+            android:textColor="@color/white"
+            />
 
 </GridLayout>
 

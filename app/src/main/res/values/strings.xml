@@ -10,4 +10,5 @@
     <string name="help_squirrel_desc">Squirrel</string>
     <string name="help_log_desc">Log</string>
     <string name="name_prompt">Name:</string>
+    <string name="generate_score_text">Generate Score</string>
 </resources>

@@ -49,9 +49,9 @@ public class ScoresFragment extends Fragment {
         @Override
         public void onBindViewHolder(ScoreHolder holder, final int position) {
             Scores score = mScoreArray[position];
-            holder.getPositionTextView().setText(Integer.toString(position + 1));
+            holder.getPositionTextView().setText(String.valueOf(position + 1));
             holder.getNameTextView().setText(score.getName());
-            holder.getValueTextView().setText(Integer.toString(score.getValue()));
+            holder.getValueTextView().setText(String.valueOf(score.getValue()));
         }
 
         @Override

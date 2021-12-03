@@ -6,15 +6,12 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-
 import com.bumptech.glide.Glide;
 import com.q42.android.scrollingimageview.ScrollingImageView;
-
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -63,7 +60,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void roll() {
-
         startTime = new Date();
         ImageView imageView = (ImageView) findViewById(R.id.log_image);
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.roll_anim);
@@ -71,7 +67,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void endGame(View view){
-
         ImageView imageView = (ImageView) findViewById(R.id.log_image);
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.roll_anim);
         imageView.clearAnimation();
@@ -87,6 +82,5 @@ public class GameActivity extends AppCompatActivity {
         ScoresList.getInstance(this).checkScore(score);
 
         finish();
-
     }
 }

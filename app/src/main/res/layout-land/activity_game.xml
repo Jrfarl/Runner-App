@@ -7,17 +7,8 @@
     xmlns:scrolling_image_view="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     tools:context=".GameActivity"
-    android:id="@+id/game_screen">
-
-    <ImageView
-        android:id="@+id/static_background"
-        android:layout_width="1010dp"
-        android:layout_height="518dp"
-        android:layout_marginLeft="-116dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:srcCompat="@drawable/sky" />
+    android:id="@+id/game_screen"
+    android:background="@drawable/sky">
 
     <com.q42.android.scrollingimageview.ScrollingImageView
         android:id="@+id/scrolling_background_game"
@@ -35,7 +26,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginLeft="70dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 

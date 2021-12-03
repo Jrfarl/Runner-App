@@ -38,7 +38,7 @@
             android:textColor="@color/white"
             android:textSize="40sp"
             android:autofillHints="@string/default_score_name"
-            android:inputType="textNoSuggestions" />
+            android:inputType="textCapCharacters" />
 
         <Button
             android:id="@+id/generate_button"

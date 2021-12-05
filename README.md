@@ -13,5 +13,7 @@ Tap the screen to make the squirrel jump. If the squirrel hits a rolling log, or
 
 ### Third-Party Licenses
 Licenses for the Third-Party Libararies used -
+
 [AndroidScrollingImageView](https://github.com/Q42/AndroidScrollingImageView/blob/master/LICENSE)
+
 [Glide](https://github.com/bumptech/glide/blob/master/LICENSE)

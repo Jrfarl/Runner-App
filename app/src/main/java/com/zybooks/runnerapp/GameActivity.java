@@ -7,12 +7,18 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 import com.q42.android.scrollingimageview.ScrollingImageView;
+
+import java.lang.ref.WeakReference;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -22,9 +28,18 @@ public class GameActivity extends AppCompatActivity {
     int jumpTime = 0;
     int scoreTime = 0;
     Date endTime;
+    Date currentTime;
     Date startTime;
     long finalScoreLong;
     int finalScore;
+    boolean first_run = true;
+    boolean front_of_log = true;
+
+
+    //--------------------------------------------------------------------------------+++
+    private BackgroundProcess mBackgroundProcess;
+    private Handler mHandler;
+    //--------------------------------------------------------------------------------
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +57,31 @@ public class GameActivity extends AppCompatActivity {
 
         ImageView imageView = findViewById(R.id.squirrel_image);
         Glide.with(this).load(R.drawable.animated_squirrel).into(imageView);
+
+        //---------------------------------------------------------------------------------+++
+
+
+        mBackgroundProcess = new BackgroundProcess();
+        mHandler = new Handler(Looper.getMainLooper());
+
+        mBackgroundProcess.start();
+        mHandler.post(mUpdateTimerRunnable);
+
+
+
+
+       //-----------------------------------------------------------------------------------
     }
+
+
+
+
+
+
 
     public void jump(View view){
         if(jumpTime == 0) {
-            jumpTime++;
+            jumpTime=1;
             ImageView imageView = (ImageView) findViewById(R.id.squirrel_image);
             Animation animation = AnimationUtils.loadAnimation(this, R.anim.jump_anim);
             imageView.startAnimation(animation);
@@ -86,4 +121,57 @@ public class GameActivity extends AppCompatActivity {
 
         finish();
     }
+
+
+
+
+
+    //-----------------------------------------------------------------------+++
+
+
+
+    private final Runnable mUpdateTimerRunnable = new Runnable() {
+        @Override
+        public void run() {
+
+
+            int timerTime = mBackgroundProcess.getmTime();
+
+
+            if((!(jumpTime==1)) && (!(timerTime==0))){
+                ImageView imageView = (ImageView) findViewById(R.id.log_image);
+                endGame(imageView);
+            }
+            else {
+                currentTime = new Date();
+                mBackgroundProcess.setmCurrentTime(currentTime);
+                if(first_run == true){
+                    mHandler.postDelayed(this, 1900); //1900
+                    first_run = false;
+                }
+                else {
+                    if(front_of_log==true) {
+                        mHandler.postDelayed(this, 470); //+20
+                        front_of_log = false;
+                    }
+                    else{
+                        mHandler.postDelayed(this, 2541); // Too big:2562   Too small:2560  -20
+                        front_of_log = true;
+                    }
+                }
+            }
+        }
+    };
+
+
+
+
+//-----------------------------------------------------------------------
+
+
+
+
+
+
+
 }

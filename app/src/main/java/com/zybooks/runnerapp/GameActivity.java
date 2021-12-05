@@ -35,7 +35,6 @@ public class GameActivity extends AppCompatActivity {
     boolean first_run = true;
     boolean front_of_log = true;
 
-
     //--------------------------------------------------------------------------------+++
     private BackgroundProcess mBackgroundProcess;
     private Handler mHandler;
@@ -68,16 +67,8 @@ public class GameActivity extends AppCompatActivity {
         mHandler.post(mUpdateTimerRunnable);
 
 
-
-
        //-----------------------------------------------------------------------------------
     }
-
-
-
-
-
-
 
     public void jump(View view){
         if(jumpTime == 0) {
@@ -122,12 +113,7 @@ public class GameActivity extends AppCompatActivity {
         finish();
     }
 
-
-
-
-
     //-----------------------------------------------------------------------+++
-
 
 
     private final Runnable mUpdateTimerRunnable = new Runnable() {
@@ -163,15 +149,6 @@ public class GameActivity extends AppCompatActivity {
         }
     };
 
-
-
-
 //-----------------------------------------------------------------------
-
-
-
-
-
-
 
 }

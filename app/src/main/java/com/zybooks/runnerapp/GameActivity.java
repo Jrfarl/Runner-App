@@ -126,15 +126,19 @@ public class GameActivity extends AppCompatActivity {
         finalScoreLong = endTime.getTime()-startTime.getTime();
         finalScore = (int)finalScoreLong;
 
-        Resources res = view.getResources();
+        if(mBackgroundProcess.isRunning() == true) {
+            Resources res = view.getResources();
 
-        SharedPreferences sharedPref = this.getSharedPreferences(
-                "gameoptions", Context.MODE_PRIVATE);
+            SharedPreferences sharedPref = this.getSharedPreferences(
+                    "gameoptions", Context.MODE_PRIVATE);
 
-        Scores score = new Scores(finalScore, sharedPref.getString("name",
-                res.getString(R.string.default_score_name)));
-        ScoresList.getInstance(this).checkScore(score);
+            Scores score = new Scores(finalScore, sharedPref.getString("name",
+                    res.getString(R.string.default_score_name)));
+            ScoresList.getInstance(this).checkScore(score);
 
+        }
+
+        mBackgroundProcess.stop();
         finish();
     }
 

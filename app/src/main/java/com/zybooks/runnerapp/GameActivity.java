@@ -6,9 +6,12 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -25,6 +28,14 @@ import java.util.TimerTask;
 
 public class GameActivity extends AppCompatActivity {
 
+    SoundPool soundPool;
+    SoundPool.Builder soundPoolBuilder;
+
+    AudioAttributes attributes;
+    AudioAttributes.Builder attributesBuilder;
+
+    int soundID_jump;
+    int soundID_death;
     int jumpTime = 0;
     int scoreTime = 0;
     Date endTime;
@@ -67,7 +78,19 @@ public class GameActivity extends AppCompatActivity {
         mHandler.post(mUpdateTimerRunnable);
 
 
-       //-----------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------
+
+        attributesBuilder = new AudioAttributes.Builder();
+        attributesBuilder.setUsage(AudioAttributes.USAGE_GAME);
+        attributesBuilder.setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION);
+        attributes = attributesBuilder.build();
+
+        soundPoolBuilder = new SoundPool.Builder();
+        soundPoolBuilder.setAudioAttributes(attributes);
+        soundPool = soundPoolBuilder.build();
+
+        soundID_jump = soundPool.load(this, R.raw.jump_sound, 1);
+        soundID_death = soundPool.load(this, R.raw.death_sound, 1);
     }
 
     public void jump(View view){
@@ -75,6 +98,8 @@ public class GameActivity extends AppCompatActivity {
             jumpTime=1;
             ImageView imageView = (ImageView) findViewById(R.id.squirrel_image);
             Animation animation = AnimationUtils.loadAnimation(this, R.anim.jump_anim);
+            //Jump sound
+            soundPool.play(soundID_jump,1,1,0,0,1);
             imageView.startAnimation(animation);
             Timer jumpTimer = new Timer();
             TimerTask task = new TimerTask(){
@@ -126,6 +151,8 @@ public class GameActivity extends AppCompatActivity {
 
             if((!(jumpTime==1)) && (!(timerTime==0))){
                 ImageView imageView = (ImageView) findViewById(R.id.log_image);
+                //Death Sound
+                soundPool.play(soundID_death,1,1,0,0,1);
                 endGame(imageView);
             }
             else {
